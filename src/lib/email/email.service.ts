@@ -25,16 +25,20 @@ class ResendEmailService implements EmailService {
   constructor() {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
-      console.warn("RESEND_API_KEY not set — emails will be logged but not sent");
+      console.warn(
+        "RESEND_API_KEY not set — emails will be logged but not sent",
+      );
     }
     this.resend = new Resend(apiKey || "placeholder");
-    this.fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@healthconnect.local";
+    this.fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@mediflow.local";
   }
 
   async send(payload: EmailPayload): Promise<boolean> {
     try {
       if (!process.env.RESEND_API_KEY) {
-        console.log(`[EMAIL LOG] To: ${payload.to} | Subject: ${payload.subject}`);
+        console.log(
+          `[EMAIL LOG] To: ${payload.to} | Subject: ${payload.subject}`,
+        );
         return true;
       }
 

@@ -11,7 +11,7 @@ export const demoProfiles = {
   PATIENT: {
     id: "demo-patient-001",
     full_name: "Alex Johnson",
-    email: "demo-patient@healthconnect.local",
+    email: "demo-patient@mediflow.local",
     role: "PATIENT" as const,
     phone: "+1-555-0101",
     avatar_url: null,
@@ -22,7 +22,7 @@ export const demoProfiles = {
   DOCTOR: {
     id: "demo-doctor-001",
     full_name: "Dr. Sarah Chen",
-    email: "demo-doctor@healthconnect.local",
+    email: "demo-doctor@mediflow.local",
     role: "DOCTOR" as const,
     phone: "+1-555-0201",
     avatar_url: null,
@@ -33,7 +33,7 @@ export const demoProfiles = {
   ADMIN: {
     id: "demo-admin-001",
     full_name: "Jordan Rivera",
-    email: "demo-admin@healthconnect.local",
+    email: "demo-admin@mediflow.local",
     role: "ADMIN" as const,
     phone: "+1-555-0301",
     avatar_url: null,
@@ -45,7 +45,7 @@ export const demoProfiles = {
 
 export const demoUser = {
   id: "demo-user-001",
-  email: "demo@healthconnect.local",
+  email: "demo@mediflow.local",
   aud: "authenticated",
   role: "authenticated",
   created_at: "2024-01-15T00:00:00Z",
@@ -66,13 +66,49 @@ export const demoDoctors = [
     slot_duration: 30,
     created_at: "2023-06-01T00:00:00Z",
     updated_at: "2023-06-01T00:00:00Z",
-    profile: { id: "user-doc-001", full_name: "Sarah Chen", email: "dr.chen@healthconnect.local", avatar_url: null, phone: "+1-555-0201" },
+    profile: {
+      id: "user-doc-001",
+      full_name: "Sarah Chen",
+      email: "dr.chen@mediflow.local",
+      avatar_url: null,
+      phone: "+1-555-0201",
+    },
     doctor_working_hours: [
-      { id: "wh-001", doctor_id: "doc-001", day_of_week: "MONDAY", start_time: "09:00:00", end_time: "17:00:00" },
-      { id: "wh-002", doctor_id: "doc-001", day_of_week: "TUESDAY", start_time: "09:00:00", end_time: "17:00:00" },
-      { id: "wh-003", doctor_id: "doc-001", day_of_week: "WEDNESDAY", start_time: "09:00:00", end_time: "17:00:00" },
-      { id: "wh-004", doctor_id: "doc-001", day_of_week: "THURSDAY", start_time: "09:00:00", end_time: "17:00:00" },
-      { id: "wh-005", doctor_id: "doc-001", day_of_week: "FRIDAY", start_time: "09:00:00", end_time: "15:00:00" },
+      {
+        id: "wh-001",
+        doctor_id: "doc-001",
+        day_of_week: "MONDAY",
+        start_time: "09:00:00",
+        end_time: "17:00:00",
+      },
+      {
+        id: "wh-002",
+        doctor_id: "doc-001",
+        day_of_week: "TUESDAY",
+        start_time: "09:00:00",
+        end_time: "17:00:00",
+      },
+      {
+        id: "wh-003",
+        doctor_id: "doc-001",
+        day_of_week: "WEDNESDAY",
+        start_time: "09:00:00",
+        end_time: "17:00:00",
+      },
+      {
+        id: "wh-004",
+        doctor_id: "doc-001",
+        day_of_week: "THURSDAY",
+        start_time: "09:00:00",
+        end_time: "17:00:00",
+      },
+      {
+        id: "wh-005",
+        doctor_id: "doc-001",
+        day_of_week: "FRIDAY",
+        start_time: "09:00:00",
+        end_time: "15:00:00",
+      },
     ],
   },
   {
@@ -85,13 +121,49 @@ export const demoDoctors = [
     slot_duration: 30,
     created_at: "2023-08-01T00:00:00Z",
     updated_at: "2023-08-01T00:00:00Z",
-    profile: { id: "user-doc-002", full_name: "James Wilson", email: "dr.wilson@healthconnect.local", avatar_url: null, phone: "+1-555-0202" },
+    profile: {
+      id: "user-doc-002",
+      full_name: "James Wilson",
+      email: "dr.wilson@healthconnect.local",
+      avatar_url: null,
+      phone: "+1-555-0202",
+    },
     doctor_working_hours: [
-      { id: "wh-006", doctor_id: "doc-002", day_of_week: "MONDAY", start_time: "08:00:00", end_time: "16:00:00" },
-      { id: "wh-007", doctor_id: "doc-002", day_of_week: "TUESDAY", start_time: "08:00:00", end_time: "16:00:00" },
-      { id: "wh-008", doctor_id: "doc-002", day_of_week: "WEDNESDAY", start_time: "08:00:00", end_time: "16:00:00" },
-      { id: "wh-009", doctor_id: "doc-002", day_of_week: "THURSDAY", start_time: "08:00:00", end_time: "16:00:00" },
-      { id: "wh-010", doctor_id: "doc-002", day_of_week: "FRIDAY", start_time: "08:00:00", end_time: "14:00:00" },
+      {
+        id: "wh-006",
+        doctor_id: "doc-002",
+        day_of_week: "MONDAY",
+        start_time: "08:00:00",
+        end_time: "16:00:00",
+      },
+      {
+        id: "wh-007",
+        doctor_id: "doc-002",
+        day_of_week: "TUESDAY",
+        start_time: "08:00:00",
+        end_time: "16:00:00",
+      },
+      {
+        id: "wh-008",
+        doctor_id: "doc-002",
+        day_of_week: "WEDNESDAY",
+        start_time: "08:00:00",
+        end_time: "16:00:00",
+      },
+      {
+        id: "wh-009",
+        doctor_id: "doc-002",
+        day_of_week: "THURSDAY",
+        start_time: "08:00:00",
+        end_time: "16:00:00",
+      },
+      {
+        id: "wh-010",
+        doctor_id: "doc-002",
+        day_of_week: "FRIDAY",
+        start_time: "08:00:00",
+        end_time: "14:00:00",
+      },
     ],
   },
   {
@@ -104,12 +176,42 @@ export const demoDoctors = [
     slot_duration: 45,
     created_at: "2024-01-01T00:00:00Z",
     updated_at: "2024-01-01T00:00:00Z",
-    profile: { id: "user-doc-003", full_name: "Emily Patel", email: "dr.patel@healthconnect.local", avatar_url: null, phone: "+1-555-0203" },
+    profile: {
+      id: "user-doc-003",
+      full_name: "Emily Patel",
+      email: "dr.patel@healthconnect.local",
+      avatar_url: null,
+      phone: "+1-555-0203",
+    },
     doctor_working_hours: [
-      { id: "wh-011", doctor_id: "doc-003", day_of_week: "MONDAY", start_time: "10:00:00", end_time: "18:00:00" },
-      { id: "wh-012", doctor_id: "doc-003", day_of_week: "TUESDAY", start_time: "10:00:00", end_time: "18:00:00" },
-      { id: "wh-013", doctor_id: "doc-003", day_of_week: "THURSDAY", start_time: "10:00:00", end_time: "18:00:00" },
-      { id: "wh-014", doctor_id: "doc-003", day_of_week: "FRIDAY", start_time: "10:00:00", end_time: "16:00:00" },
+      {
+        id: "wh-011",
+        doctor_id: "doc-003",
+        day_of_week: "MONDAY",
+        start_time: "10:00:00",
+        end_time: "18:00:00",
+      },
+      {
+        id: "wh-012",
+        doctor_id: "doc-003",
+        day_of_week: "TUESDAY",
+        start_time: "10:00:00",
+        end_time: "18:00:00",
+      },
+      {
+        id: "wh-013",
+        doctor_id: "doc-003",
+        day_of_week: "THURSDAY",
+        start_time: "10:00:00",
+        end_time: "18:00:00",
+      },
+      {
+        id: "wh-014",
+        doctor_id: "doc-003",
+        day_of_week: "FRIDAY",
+        start_time: "10:00:00",
+        end_time: "16:00:00",
+      },
     ],
   },
   {
@@ -122,11 +224,35 @@ export const demoDoctors = [
     slot_duration: 30,
     created_at: "2023-03-01T00:00:00Z",
     updated_at: "2023-03-01T00:00:00Z",
-    profile: { id: "user-doc-004", full_name: "Michael Torres", email: "dr.torres@healthconnect.local", avatar_url: null, phone: "+1-555-0204" },
+    profile: {
+      id: "user-doc-004",
+      full_name: "Michael Torres",
+      email: "dr.torres@healthconnect.local",
+      avatar_url: null,
+      phone: "+1-555-0204",
+    },
     doctor_working_hours: [
-      { id: "wh-015", doctor_id: "doc-004", day_of_week: "MONDAY", start_time: "09:00:00", end_time: "17:00:00" },
-      { id: "wh-016", doctor_id: "doc-004", day_of_week: "WEDNESDAY", start_time: "09:00:00", end_time: "17:00:00" },
-      { id: "wh-017", doctor_id: "doc-004", day_of_week: "FRIDAY", start_time: "09:00:00", end_time: "13:00:00" },
+      {
+        id: "wh-015",
+        doctor_id: "doc-004",
+        day_of_week: "MONDAY",
+        start_time: "09:00:00",
+        end_time: "17:00:00",
+      },
+      {
+        id: "wh-016",
+        doctor_id: "doc-004",
+        day_of_week: "WEDNESDAY",
+        start_time: "09:00:00",
+        end_time: "17:00:00",
+      },
+      {
+        id: "wh-017",
+        doctor_id: "doc-004",
+        day_of_week: "FRIDAY",
+        start_time: "09:00:00",
+        end_time: "13:00:00",
+      },
     ],
   },
 ];
@@ -154,18 +280,22 @@ export const demoAppointments = [
     appointment_symptoms: {
       id: "sym-001",
       appointment_id: "appt-001",
-      chief_complaint: "Chest tightness and shortness of breath during exercise",
-      symptoms: "Intermittent chest tightness when climbing stairs, mild shortness of breath, occasional palpitations after coffee. No pain at rest.",
+      chief_complaint:
+        "Chest tightness and shortness of breath during exercise",
+      symptoms:
+        "Intermittent chest tightness when climbing stairs, mild shortness of breath, occasional palpitations after coffee. No pain at rest.",
       duration: "2 weeks",
       severity: "Moderate",
-      additional_information: "I stopped exercising last week because of the symptoms. Family history of heart disease — father had a heart attack at 55.",
+      additional_information:
+        "I stopped exercising last week because of the symptoms. Family history of heart disease — father had a heart attack at 55.",
       created_at: "2024-01-10T00:00:00Z",
     },
     ai_previsit_summaries: {
       id: "ai-001",
       appointment_id: "appt-001",
       urgency: "MEDIUM" as const,
-      chief_complaint: "Exercise-induced chest tightness with cardiac risk factors",
+      chief_complaint:
+        "Exercise-induced chest tightness with cardiac risk factors",
       suggested_questions: [
         "Can you describe the exact nature of the chest tightness — is it pressure, burning, or stabbing?",
         "Have you noticed any radiation of discomfort to the arm, jaw, or back?",
@@ -198,17 +328,20 @@ export const demoAppointments = [
       id: "sym-002",
       appointment_id: "appt-002",
       chief_complaint: "Persistent headache for 5 days",
-      symptoms: "Tension-type headache, bilateral, band-like pressure. Worsens in the afternoon. OTC ibuprofen provides temporary relief.",
+      symptoms:
+        "Tension-type headache, bilateral, band-like pressure. Worsens in the afternoon. OTC ibuprofen provides temporary relief.",
       duration: "5 days",
       severity: "Mild",
-      additional_information: "Started a new remote job last month — lots of screen time.",
+      additional_information:
+        "Started a new remote job last month — lots of screen time.",
       created_at: "2024-01-01T00:00:00Z",
     },
     ai_previsit_summaries: {
       id: "ai-002",
       appointment_id: "appt-002",
       urgency: "LOW" as const,
-      chief_complaint: "Tension-type headaches associated with increased screen time",
+      chief_complaint:
+        "Tension-type headaches associated with increased screen time",
       suggested_questions: [
         "How many hours per day are you spending on screens?",
         "Do you take regular breaks following the 20-20-20 rule?",
@@ -218,43 +351,58 @@ export const demoAppointments = [
       is_available: true,
       created_at: "2024-01-01T00:00:00Z",
     },
-    clinical_notes: [{
-      id: "cn-002",
-      appointment_id: "appt-002",
-      doctor_id: "doc-002",
-      clinical_notes: "Patient presents with tension-type headaches. Bilateral band-like pressure, no neurological deficits. Symptoms correlate with increased screen time from new remote position. BP 122/78. Neurological exam normal.",
-      diagnosis: "Tension-type headache, likely related to occupational ergonomics",
-      treatment_plan: "Conservative management: ergonomic assessment, regular breaks, stress management techniques",
-      follow_up_instructions: "Follow 20-20-20 rule every 20 minutes. Consider ergonomic workstation assessment. Return in 2 weeks if symptoms persist.",
-      created_at: "2024-01-17T14:30:00Z",
-      updated_at: "2024-01-17T14:30:00Z",
-    }],
-    prescriptions: [{
-      id: "rx-002",
-      appointment_id: "appt-002",
-      doctor_id: "doc-002",
-      patient_id: "demo-patient-001",
-      created_at: "2024-01-17T14:35:00Z",
-      prescription_medications: [
-        {
-          id: "med-001",
-          prescription_id: "rx-002",
-          medication_name: "Ibuprofen",
-          dosage: "400mg",
-          frequency: "As needed (max 3x/day)",
-          duration: "2 weeks",
-          start_date: "2024-01-17",
-          end_date: "2024-01-31",
-          instructions: "Take with food. Do not exceed 1200mg per day.",
-          created_at: "2024-01-17T14:35:00Z",
-        },
-      ],
-    }],
+    clinical_notes: [
+      {
+        id: "cn-002",
+        appointment_id: "appt-002",
+        doctor_id: "doc-002",
+        clinical_notes:
+          "Patient presents with tension-type headaches. Bilateral band-like pressure, no neurological deficits. Symptoms correlate with increased screen time from new remote position. BP 122/78. Neurological exam normal.",
+        diagnosis:
+          "Tension-type headache, likely related to occupational ergonomics",
+        treatment_plan:
+          "Conservative management: ergonomic assessment, regular breaks, stress management techniques",
+        follow_up_instructions:
+          "Follow 20-20-20 rule every 20 minutes. Consider ergonomic workstation assessment. Return in 2 weeks if symptoms persist.",
+        created_at: "2024-01-17T14:30:00Z",
+        updated_at: "2024-01-17T14:30:00Z",
+      },
+    ],
+    prescriptions: [
+      {
+        id: "rx-002",
+        appointment_id: "appt-002",
+        doctor_id: "doc-002",
+        patient_id: "demo-patient-001",
+        created_at: "2024-01-17T14:35:00Z",
+        prescription_medications: [
+          {
+            id: "med-001",
+            prescription_id: "rx-002",
+            medication_name: "Ibuprofen",
+            dosage: "400mg",
+            frequency: "As needed (max 3x/day)",
+            duration: "2 weeks",
+            start_date: "2024-01-17",
+            end_date: "2024-01-31",
+            instructions: "Take with food. Do not exceed 1200mg per day.",
+            created_at: "2024-01-17T14:35:00Z",
+          },
+        ],
+      },
+    ],
     post_visit_summaries: {
       id: "pvs-002",
       appointment_id: "appt-002",
-      summary: "You visited Dr. Wilson about persistent headaches. The doctor found that your headaches are likely tension-type, caused by increased screen time from your new job. Your exam was normal — no serious concerns. The doctor recommends taking regular screen breaks and improving your workstation setup.",
-      medications: [{ name: "Ibuprofen 400mg", instructions: "Take with food as needed for headaches, up to 3 times per day for 2 weeks." }],
+      summary:
+        "You visited Dr. Wilson about persistent headaches. The doctor found that your headaches are likely tension-type, caused by increased screen time from your new job. Your exam was normal — no serious concerns. The doctor recommends taking regular screen breaks and improving your workstation setup.",
+      medications: [
+        {
+          name: "Ibuprofen 400mg",
+          instructions:
+            "Take with food as needed for headaches, up to 3 times per day for 2 weeks.",
+        },
+      ],
       follow_up_steps: [
         "Follow the 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds",
         "Get an ergonomic assessment for your home workstation",
@@ -329,17 +477,20 @@ export const demoDoctorAppointments = [
       id: "sym-d01",
       appointment_id: "appt-d01",
       chief_complaint: "Recurring lower back pain",
-      symptoms: "Dull ache in lower back, worse after sitting for long periods. Occasional sharp pain when bending. No radiation to legs.",
+      symptoms:
+        "Dull ache in lower back, worse after sitting for long periods. Occasional sharp pain when bending. No radiation to legs.",
       duration: "3 weeks",
       severity: "Moderate",
-      additional_information: "Works a desk job. Started doing home workouts recently.",
+      additional_information:
+        "Works a desk job. Started doing home workouts recently.",
       created_at: "2024-01-15T00:00:00Z",
     },
     ai_previsit_summaries: {
       id: "ai-d01",
       appointment_id: "appt-d01",
       urgency: "LOW" as const,
-      chief_complaint: "Mechanical lower back pain likely related to prolonged sitting and recent exercise changes",
+      chief_complaint:
+        "Mechanical lower back pain likely related to prolonged sitting and recent exercise changes",
       suggested_questions: [
         "Can you pinpoint the exact location of the pain — is it central, left, or right side?",
         "Does the pain radiate down either leg or cause numbness/tingling?",
@@ -372,17 +523,20 @@ export const demoDoctorAppointments = [
       id: "sym-d03",
       appointment_id: "appt-d03",
       chief_complaint: "Heart palpitations and anxiety",
-      symptoms: "Feeling heart race intermittently, especially at night. Sweating, difficulty sleeping. No chest pain.",
+      symptoms:
+        "Feeling heart race intermittently, especially at night. Sweating, difficulty sleeping. No chest pain.",
       duration: "1 week",
       severity: "Moderate",
-      additional_information: "Going through a stressful period at work. Drinks 3-4 cups of coffee daily.",
+      additional_information:
+        "Going through a stressful period at work. Drinks 3-4 cups of coffee daily.",
       created_at: "2024-01-16T00:00:00Z",
     },
     ai_previsit_summaries: {
       id: "ai-d03",
       appointment_id: "appt-d03",
       urgency: "MEDIUM" as const,
-      chief_complaint: "Palpitations with probable anxiety and caffeine contribution",
+      chief_complaint:
+        "Palpitations with probable anxiety and caffeine contribution",
       suggested_questions: [
         "Have you noticed if the palpitations correlate with specific times, meals, or activities?",
         "How has your caffeine intake changed recently, and do you consume it after 2pm?",
@@ -473,7 +627,8 @@ export const demoPrescriptions = [
         duration: "3 months",
         start_date: "2024-01-20",
         end_date: "2024-04-20",
-        instructions: "Take at bedtime. Avoid grapefruit. Follow up with liver function tests in 6 weeks.",
+        instructions:
+          "Take at bedtime. Avoid grapefruit. Follow up with liver function tests in 6 weeks.",
         created_at: "2024-01-20T10:30:00Z",
       },
     ],
@@ -509,15 +664,27 @@ export const demoLeaves = [
 // Demo Slots
 // ==============================================
 
-export function generateDemoSlots(dateStr: string): { startTime: string; endTime: string; available: boolean }[] {
+export function generateDemoSlots(
+  dateStr: string,
+): { startTime: string; endTime: string; available: boolean }[] {
   const dateObj = new Date(dateStr + "T12:00:00Z");
   const dayIndex = dateObj.getUTCDay();
-  const days = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
+  const days = [
+    "SUNDAY",
+    "MONDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY",
+    "SATURDAY",
+  ];
   const dayOfWeek = days[dayIndex];
 
   // Check if doctor works this day
   const doctor = demoDoctors[0];
-  const wh = doctor.doctor_working_hours?.find((h: any) => h.day_of_week === dayOfWeek);
+  const wh = doctor.doctor_working_hours?.find(
+    (h: any) => h.day_of_week === dayOfWeek,
+  );
   if (!wh) return [];
 
   const [startH, startM] = wh.start_time.split(":").map(Number);
@@ -528,10 +695,20 @@ export function generateDemoSlots(dateStr: string): { startTime: string; endTime
   const endMin = endH * 60 + endM;
 
   const bookedTimes = demoAppointments
-    .filter(a => a.doctor_id === doctor.id && a.start_time.startsWith(dateStr) && (a.status as string) !== "CANCELLED" && (a.status as string) !== "EXPIRED")
-    .map(a => ({ start: new Date(a.start_time).getTime(), end: new Date(a.end_time).getTime() }));
+    .filter(
+      (a) =>
+        a.doctor_id === doctor.id &&
+        a.start_time.startsWith(dateStr) &&
+        (a.status as string) !== "CANCELLED" &&
+        (a.status as string) !== "EXPIRED",
+    )
+    .map((a) => ({
+      start: new Date(a.start_time).getTime(),
+      end: new Date(a.end_time).getTime(),
+    }));
 
-  const slots: { startTime: string; endTime: string; available: boolean }[] = [];
+  const slots: { startTime: string; endTime: string; available: boolean }[] =
+    [];
   let current = startMin;
 
   while (current + slotDuration <= endMin) {
@@ -539,7 +716,9 @@ export function generateDemoSlots(dateStr: string): { startTime: string; endTime
     slotStart.setUTCHours(Math.floor(current / 60), current % 60, 0, 0);
     const slotEnd = new Date(slotStart.getTime() + slotDuration * 60 * 1000);
 
-    const isBooked = bookedTimes.some(b => slotStart.getTime() < b.end && slotEnd.getTime() > b.start);
+    const isBooked = bookedTimes.some(
+      (b) => slotStart.getTime() < b.end && slotEnd.getTime() > b.start,
+    );
     slots.push({
       startTime: slotStart.toISOString(),
       endTime: slotEnd.toISOString(),
@@ -596,7 +775,12 @@ export function installDemoFetchInterceptor() {
 
   const originalFetch = window.fetch;
   window.fetch = async (input: RequestInfo | URL, init?: RequestInit) => {
-    const url = typeof input === "string" ? input : input instanceof URL ? input.href : input.url;
+    const url =
+      typeof input === "string"
+        ? input
+        : input instanceof URL
+          ? input.href
+          : input.url;
 
     if (!isDemoMode()) {
       return originalFetch(input, init);
@@ -604,61 +788,153 @@ export function installDemoFetchInterceptor() {
 
     // Demo API responses
     if (url.startsWith("/api/appointments/hold")) {
-      return new Response(JSON.stringify({ success: true, data: { appointment_id: "demo-new-appt", hold_expires_at: new Date(Date.now() + 5 * 60000).toISOString() } }), { status: 201, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({
+          success: true,
+          data: {
+            appointment_id: "demo-new-appt",
+            hold_expires_at: new Date(Date.now() + 5 * 60000).toISOString(),
+          },
+        }),
+        { status: 201, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url === "/api/appointments" && init?.method === "POST") {
-      return new Response(JSON.stringify({ success: true, data: { appointment_id: "demo-new-appt", status: "CONFIRMED" } }), { status: 201, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({
+          success: true,
+          data: { appointment_id: "demo-new-appt", status: "CONFIRMED" },
+        }),
+        { status: 201, headers: { "Content-Type": "application/json" } },
+      );
     }
-    if (url.startsWith("/api/appointments?") && (!init?.method || init.method === "GET")) {
+    if (
+      url.startsWith("/api/appointments?") &&
+      (!init?.method || init.method === "GET")
+    ) {
       const role = localStorage.getItem("demo_role") || "PATIENT";
-      const items = role === "DOCTOR" ? demoDoctorAppointments : demoAppointments;
-      return new Response(JSON.stringify({ success: true, data: { items } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      const items =
+        role === "DOCTOR" ? demoDoctorAppointments : demoAppointments;
+      return new Response(JSON.stringify({ success: true, data: { items } }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
     }
     if (url.match(/\/api\/appointments\/[^/]+\/consultation/)) {
-      return new Response(JSON.stringify({ success: true, data: { id: "demo-cn" } }), { status: 201, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({ success: true, data: { id: "demo-cn" } }),
+        { status: 201, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.match(/\/api\/appointments\/[^/]+\/prescription/)) {
-      return new Response(JSON.stringify({ success: true, data: { prescription_id: "demo-rx", medications: 1 } }), { status: 201, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({
+          success: true,
+          data: { prescription_id: "demo-rx", medications: 1 },
+        }),
+        { status: 201, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.match(/\/api\/appointments\/[^/]+$/) && init?.method === "PATCH") {
-      return new Response(JSON.stringify({ success: true, data: { status: "COMPLETED" } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({ success: true, data: { status: "COMPLETED" } }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      );
     }
-    if (url.match(/\/api\/appointments\/[^/]+$/) && (!init?.method || init.method === "GET")) {
+    if (
+      url.match(/\/api\/appointments\/[^/]+$/) &&
+      (!init?.method || init.method === "GET")
+    ) {
       const id = url.split("/api/appointments/")[1]?.split("?")[0];
-      const appt = [...demoAppointments, ...demoDoctorAppointments].find(a => a.id === id) || demoAppointments[0];
-      return new Response(JSON.stringify({ success: true, data: appt }), { status: 200, headers: { "Content-Type": "application/json" } });
+      const appt =
+        [...demoAppointments, ...demoDoctorAppointments].find(
+          (a) => a.id === id,
+        ) || demoAppointments[0];
+      return new Response(JSON.stringify({ success: true, data: appt }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
     }
     if (url.startsWith("/api/appointments")) {
-      return new Response(JSON.stringify({ success: true, data: { items: demoAppointments } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({ success: true, data: { items: demoAppointments } }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.startsWith("/api/doctors") && url.includes("/slots")) {
-      const dateStr = new URL(url, window.location.origin).searchParams.get("date") || format(new Date(), "yyyy-MM-dd");
-      return new Response(JSON.stringify({ success: true, data: { slots: generateDemoSlots(dateStr), date: dateStr } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      const dateStr =
+        new URL(url, window.location.origin).searchParams.get("date") ||
+        format(new Date(), "yyyy-MM-dd");
+      return new Response(
+        JSON.stringify({
+          success: true,
+          data: { slots: generateDemoSlots(dateStr), date: dateStr },
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.match(/\/api\/doctors\/[^/]+$/) && !url.includes("/slots")) {
-      return new Response(JSON.stringify({ success: true, data: demoDoctors[0] }), { status: 200, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({ success: true, data: demoDoctors[0] }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.startsWith("/api/doctors")) {
-      return new Response(JSON.stringify({ success: true, data: { items: demoDoctors, total: demoDoctors.length, page: 1, pageSize: 20 } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({
+          success: true,
+          data: {
+            items: demoDoctors,
+            total: demoDoctors.length,
+            page: 1,
+            pageSize: 20,
+          },
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.startsWith("/api/prescriptions")) {
-      return new Response(JSON.stringify({ success: true, data: { items: demoPrescriptions } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({ success: true, data: { items: demoPrescriptions } }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.startsWith("/api/admin/stats")) {
-      return new Response(JSON.stringify({ success: true, data: demoStats }), { status: 200, headers: { "Content-Type": "application/json" } });
+      return new Response(JSON.stringify({ success: true, data: demoStats }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
     }
     if (url.startsWith("/api/admin/doctors")) {
-      return new Response(JSON.stringify({ success: true, data: { items: demoDoctors } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({ success: true, data: { items: demoDoctors } }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.startsWith("/api/admin/leave") && init?.method === "POST") {
-      return new Response(JSON.stringify({ success: true, data: { leave: { id: "demo-leave" }, affected_appointments: 0 } }), { status: 201, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({
+          success: true,
+          data: { leave: { id: "demo-leave" }, affected_appointments: 0 },
+        }),
+        { status: 201, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.startsWith("/api/admin/leave")) {
-      return new Response(JSON.stringify({ success: true, data: { items: demoLeaves } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({ success: true, data: { items: demoLeaves } }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      );
     }
     if (url.startsWith("/api/auth/me")) {
       const role = localStorage.getItem("demo_role") || "PATIENT";
-      return new Response(JSON.stringify({ success: true, data: demoProfiles[role as keyof typeof demoProfiles] }), { status: 200, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({
+          success: true,
+          data: demoProfiles[role as keyof typeof demoProfiles],
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      );
     }
 
     return originalFetch(input, init);

@@ -6,18 +6,36 @@ import { useAuth } from "@/app/providers";
 import { createClient } from "@/lib/supabase/client";
 import { isDemoMode, setDemoMode } from "@/lib/demo-data";
 import {
-  LayoutDashboard, Calendar, FileText, Bell, LogOut,
-  ClipboardList, Clock, ChevronRight, Group, Hospital,
-  Cog, AlignJustify, CircleX, FlaskConical,
+  LayoutDashboard,
+  Calendar,
+  FileText,
+  Bell,
+  LogOut,
+  ClipboardList,
+  Clock,
+  ChevronRight,
+  Group,
+  Hospital,
+  Cog,
+  AlignJustify,
+  CircleX,
+  FlaskConical,
 } from "lucide-react";
 import { useState } from "react";
 
-const navItems: Record<string, { label: string; href: string; icon: React.ElementType }[]> = {
+const navItems: Record<
+  string,
+  { label: string; href: string; icon: React.ElementType }[]
+> = {
   PATIENT: [
     { label: "Dashboard", href: "/patient/dashboard", icon: LayoutDashboard },
     { label: "Find Doctors", href: "/patient/doctors", icon: Hospital },
     { label: "Appointments", href: "/patient/appointments", icon: Calendar },
-    { label: "Prescriptions", href: "/patient/prescriptions", icon: FlaskConical },
+    {
+      label: "Prescriptions",
+      href: "/patient/prescriptions",
+      icon: FlaskConical,
+    },
     { label: "Reminders", href: "/patient/reminders", icon: Bell },
     { label: "Profile", href: "/patient/profile", icon: Cog },
   ],
@@ -61,7 +79,9 @@ export function Sidebar() {
           <div className="h-8 bg-gray-200 rounded w-32" />
           <div className="h-4 bg-gray-200 rounded w-24" />
           <div className="space-y-2 mt-6">
-            {[1, 2, 3].map(i => <div key={i} className="h-10 bg-gray-100 rounded" />)}
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-10 bg-gray-100 rounded" />
+            ))}
           </div>
         </div>
       </aside>
@@ -82,32 +102,45 @@ export function Sidebar() {
 
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-black/50" onClick={() => setMobileOpen(false)} />
+        <div
+          className="lg:hidden fixed inset-0 z-40 bg-black/50"
+          onClick={() => setMobileOpen(false)}
+        />
       )}
 
       {/* Sidebar */}
-      <aside className={`
+      <aside
+        className={`
         fixed lg:static inset-y-0 left-0 z-50
         w-64 bg-white border-r border-gray-200
         flex flex-col transition-transform duration-200
         ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-      `}>
+      `}
+      >
         <div className="flex items-center justify-between p-4 border-b border-gray-100">
           <div>
             <h1 className="text-lg font-bold text-cyan-700">MediFlow</h1>
             <div className="flex items-center gap-2">
               <p className="text-xs text-gray-500">{profile.role}</p>
-              {isDemoMode() && <span className="px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">DEMO</span>}
+              {isDemoMode() && (
+                <span className="px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">
+                  DEMO
+                </span>
+              )}
             </div>
           </div>
-          <button onClick={() => setMobileOpen(false)} className="lg:hidden p-1">
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="lg:hidden p-1"
+          >
             <CircleX className="h-5 w-5" />
           </button>
         </div>
 
         <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
           {items.map((item) => {
-            const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+            const isActive =
+              pathname === item.href || pathname.startsWith(item.href + "/");
             return (
               <Link
                 key={item.href}
@@ -128,7 +161,9 @@ export function Sidebar() {
 
         <div className="p-3 border-t border-gray-100">
           <div className="px-3 py-2 mb-2">
-            <p className="text-sm font-medium text-gray-900">{profile.full_name}</p>
+            <p className="text-sm font-medium text-gray-900">
+              {profile.full_name}
+            </p>
             <p className="text-xs text-gray-500">{profile.email}</p>
           </div>
           <button

@@ -37,6 +37,7 @@ The system uses a **modular Next.js 15 monolith** with the App Router:
 **The database is the final authority.** Two mechanisms prevent double-booking:
 
 ### Exclusion Constraint
+
 ```sql
 EXCLUDE USING gist (
   doctor_id WITH =,
@@ -47,6 +48,7 @@ EXCLUDE USING gist (
 This PostgreSQL constraint physically prevents overlapping time ranges for the same doctor when appointments are active. Any INSERT or UPDATE that violates this is rejected by the database engine.
 
 ### Atomic RPC Function
+
 ```sql
 hold_appointment_slot(doctor_id, patient_id, start_time, end_time, hold_minutes)
 ```
@@ -58,6 +60,7 @@ This function performs all validations (working hours, leave, availability) and 
 ## 3. Slot Hold Mechanism
 
 When a patient selects a slot:
+
 1. `hold_appointment_slot()` creates an appointment with `status = HELD` and `hold_expires_at = now + 5 minutes`
 2. The exclusion constraint immediately blocks other bookings for that slot
 3. A cron job (`/api/cron/expire-holds`) runs periodically to expire held slots
@@ -68,6 +71,7 @@ If the patient completes booking within the hold period, `confirm_appointment()`
 ## 4. Doctor Leave Conflict Handling
 
 When an admin creates leave:
+
 1. Check for overlapping existing leave
 2. Find all affected future appointments (CONFIRMED or HELD)
 3. Display affected appointments to admin for confirmation

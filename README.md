@@ -5,6 +5,7 @@ A production-quality Healthcare Appointment & Follow-up Manager built with Next.
 ## Features
 
 ### Patient Portal
+
 - Register / Login
 - Search doctors by specialisation
 - View doctor profiles and availability
@@ -16,6 +17,7 @@ A production-quality Healthcare Appointment & Follow-up Manager built with Next.
 - Connect Google Calendar
 
 ### Doctor Portal
+
 - View dashboard with today's appointments
 - View patient symptoms and AI pre-visit summaries
 - Enter clinical notes, diagnosis, treatment plan
@@ -24,6 +26,7 @@ A production-quality Healthcare Appointment & Follow-up Manager built with Next.
 - Generate post-visit AI summaries
 
 ### Admin Portal
+
 - System dashboard with statistics
 - Manage doctors (create, edit, configure)
 - Configure working hours per doctor
@@ -33,20 +36,21 @@ A production-quality Healthcare Appointment & Follow-up Manager built with Next.
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend + Backend | Next.js 15 (App Router) |
-| UI | Tailwind CSS, Lucide React |
-| Forms | React Hook Form + Zod |
-| Database | Supabase PostgreSQL |
-| Auth | Supabase Auth |
-| AI | Google Gemini |
-| Email | Resend |
-| Calendar | Google Calendar API |
+| Layer              | Technology                 |
+| ------------------ | -------------------------- |
+| Frontend + Backend | Next.js 15 (App Router)    |
+| UI                 | Tailwind CSS, Lucide React |
+| Forms              | React Hook Form + Zod      |
+| Database           | Supabase PostgreSQL        |
+| Auth               | Supabase Auth              |
+| AI                 | Google Gemini              |
+| Email              | Resend                     |
+| Calendar           | Google Calendar API        |
 
 ## Architecture
 
 Modular Next.js monolith with:
+
 - **PostgreSQL exclusion constraints** for double-booking prevention
 - **Atomic RPC functions** for booking operations
 - **Supabase RLS** for row-level security
@@ -69,7 +73,7 @@ See [docs/system-design.md](docs/system-design.md) for detailed architecture.
 
 ```bash
 git clone <repository-url>
-cd healthcare-manager
+cd MediFlow
 npm install
 ```
 
@@ -111,10 +115,10 @@ Visit [http://localhost:3000](http://localhost:3000)
 
 ## Demo Accounts
 
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@example.com | password123 |
-| Doctor | doctor@example.com | password123 |
+| Role    | Email               | Password    |
+| ------- | ------------------- | ----------- |
+| Admin   | admin@example.com   | password123 |
+| Doctor  | doctor@example.com  | password123 |
 | Patient | patient@example.com | password123 |
 
 ## Database Schema
@@ -139,37 +143,37 @@ erDiagram
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | /api/auth/register | Register new user |
-| POST | /api/auth/login | Login |
-| POST | /api/auth/logout | Logout |
-| GET | /api/auth/me | Get current profile |
-| GET | /api/doctors | List doctors |
-| GET | /api/doctors/[id] | Get doctor profile |
-| GET | /api/doctors/[id]/slots | Get available slots |
-| POST | /api/appointments/hold | Hold a slot |
-| POST | /api/appointments | Confirm booking |
-| GET | /api/appointments | List appointments |
-| GET | /api/appointments/[id] | Get appointment |
-| PATCH | /api/appointments/[id] | Update status |
-| POST | /api/appointments/[id]/consultation | Save clinical notes |
-| POST | /api/appointments/[id]/prescription | Create prescription |
-| GET | /api/prescriptions | List prescriptions |
-| GET | /api/admin/stats | Dashboard stats |
-| GET | /api/admin/doctors | List doctors (admin) |
-| POST | /api/admin/doctors | Create doctor |
-| POST | /api/admin/doctors/[id]/working-hours | Update hours |
-| GET/POST/DELETE | /api/admin/leave | Manage leave |
-| GET | /api/health | Health check |
+| Method          | Endpoint                              | Description          |
+| --------------- | ------------------------------------- | -------------------- |
+| POST            | /api/auth/register                    | Register new user    |
+| POST            | /api/auth/login                       | Login                |
+| POST            | /api/auth/logout                      | Logout               |
+| GET             | /api/auth/me                          | Get current profile  |
+| GET             | /api/doctors                          | List doctors         |
+| GET             | /api/doctors/[id]                     | Get doctor profile   |
+| GET             | /api/doctors/[id]/slots               | Get available slots  |
+| POST            | /api/appointments/hold                | Hold a slot          |
+| POST            | /api/appointments                     | Confirm booking      |
+| GET             | /api/appointments                     | List appointments    |
+| GET             | /api/appointments/[id]                | Get appointment      |
+| PATCH           | /api/appointments/[id]                | Update status        |
+| POST            | /api/appointments/[id]/consultation   | Save clinical notes  |
+| POST            | /api/appointments/[id]/prescription   | Create prescription  |
+| GET             | /api/prescriptions                    | List prescriptions   |
+| GET             | /api/admin/stats                      | Dashboard stats      |
+| GET             | /api/admin/doctors                    | List doctors (admin) |
+| POST            | /api/admin/doctors                    | Create doctor        |
+| POST            | /api/admin/doctors/[id]/working-hours | Update hours         |
+| GET/POST/DELETE | /api/admin/leave                      | Manage leave         |
+| GET             | /api/health                           | Health check         |
 
 ## Background Jobs (Cron Endpoints)
 
-| Endpoint | Description |
-|----------|-------------|
-| GET /api/cron/expire-holds | Expire held slots |
-| GET /api/cron/process-notifications | Process pending emails |
-| GET /api/cron/process-reminders | Process medication reminders |
+| Endpoint                            | Description                  |
+| ----------------------------------- | ---------------------------- |
+| GET /api/cron/expire-holds          | Expire held slots            |
+| GET /api/cron/process-notifications | Process pending emails       |
+| GET /api/cron/process-reminders     | Process medication reminders |
 
 All cron endpoints require `Authorization: Bearer <CRON_SECRET>`.
 
@@ -180,7 +184,7 @@ Launch 100 simultaneous requests for the same doctor slot:
 ```
 100 concurrent POST /api/appointments/hold
   → same doctor_id, same start_time, same end_time
-  
+
 Result: Exactly 1 succeeds (HTTP 201)
         99 fail with SLOT_UNAVAILABLE (HTTP 409)
 ```

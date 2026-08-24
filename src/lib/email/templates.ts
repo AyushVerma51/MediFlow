@@ -27,7 +27,12 @@ const baseTemplate = (title: string, content: string) => `
 </html>`;
 
 export const emailTemplates = {
-  bookingConfirmation: (patientName: string, doctorName: string, date: string, time: string) => ({
+  bookingConfirmation: (
+    patientName: string,
+    doctorName: string,
+    date: string,
+    time: string,
+  ) => ({
     subject: `Appointment Confirmed — ${date} at ${time}`,
     html: baseTemplate(
       "Appointment Confirmed",
@@ -38,11 +43,16 @@ export const emailTemplates = {
          <p><strong>Date:</strong> ${date}</p>
          <p><strong>Time:</strong> ${time}</p>
        </div>
-       <p>Please arrive 10 minutes before your scheduled time.</p>`
+       <p>Please arrive 10 minutes before your scheduled time.</p>`,
     ),
   }),
 
-  appointmentReminder: (patientName: string, doctorName: string, date: string, time: string) => ({
+  appointmentReminder: (
+    patientName: string,
+    doctorName: string,
+    date: string,
+    time: string,
+  ) => ({
     subject: `Appointment Reminder — Tomorrow at ${time}`,
     html: baseTemplate(
       "Appointment Reminder",
@@ -52,22 +62,33 @@ export const emailTemplates = {
          <p><strong>Doctor:</strong> Dr. ${doctorName}</p>
          <p><strong>Date:</strong> ${date}</p>
          <p><strong>Time:</strong> ${time}</p>
-       </div>`
+       </div>`,
     ),
   }),
 
-  cancellation: (patientName: string, doctorName: string, date: string, time: string, reason?: string) => ({
+  cancellation: (
+    patientName: string,
+    doctorName: string,
+    date: string,
+    time: string,
+    reason?: string,
+  ) => ({
     subject: `Appointment Cancelled — ${date}`,
     html: baseTemplate(
       "Appointment Cancelled",
       `<p>Hi ${patientName},</p>
        <p>Your appointment with Dr. ${doctorName} on ${date} at ${time} has been cancelled.</p>
        ${reason ? `<p><strong>Reason:</strong> ${reason}</p>` : ""}
-       <p>If you need to reschedule, please book a new appointment through the app.</p>`
+       <p>If you need to reschedule, please book a new appointment through the app.</p>`,
     ),
   }),
 
-  newAppointmentForDoctor: (doctorName: string, patientName: string, date: string, time: string) => ({
+  newAppointmentForDoctor: (
+    doctorName: string,
+    patientName: string,
+    date: string,
+    time: string,
+  ) => ({
     subject: `New Appointment — ${patientName} on ${date}`,
     html: baseTemplate(
       "New Appointment Booked",
@@ -77,22 +98,31 @@ export const emailTemplates = {
          <p><strong>Patient:</strong> ${patientName}</p>
          <p><strong>Date:</strong> ${date}</p>
          <p><strong>Time:</strong> ${time}</p>
-       </div>`
+       </div>`,
     ),
   }),
 
-  doctorLeave: (patientName: string, doctorName: string, leaveDate: string) => ({
+  doctorLeave: (
+    patientName: string,
+    doctorName: string,
+    leaveDate: string,
+  ) => ({
     subject: `Appointment Cancelled — Doctor on Leave`,
     html: baseTemplate(
       "Appointment Affected by Doctor Leave",
       `<p>Hi ${patientName},</p>
        <p>Unfortunately, Dr. ${doctorName} will be on leave on ${leaveDate}.</p>
        <p>Your appointment has been cancelled. We apologize for the inconvenience.</p>
-       <p>Please book a new appointment through the app.</p>`
+       <p>Please book a new appointment through the app.</p>`,
     ),
   }),
 
-  medicationReminder: (patientName: string, medicationName: string, dosage: string, time: string) => ({
+  medicationReminder: (
+    patientName: string,
+    medicationName: string,
+    dosage: string,
+    time: string,
+  ) => ({
     subject: `Medication Reminder — ${medicationName}`,
     html: baseTemplate(
       "Medication Reminder",
@@ -103,17 +133,21 @@ export const emailTemplates = {
          <p><strong>Dosage:</strong> ${dosage}</p>
          <p><strong>Time:</strong> ${time}</p>
        </div>
-       <p>Take your medication as prescribed by your doctor.</p>`
+       <p>Take your medication as prescribed by your doctor.</p>`,
     ),
   }),
 
-  postVisitSummary: (patientName: string, doctorName: string, summaryUrl: string) => ({
+  postVisitSummary: (
+    patientName: string,
+    doctorName: string,
+    summaryUrl: string,
+  ) => ({
     subject: `Your Visit Summary — Dr. ${doctorName}`,
     html: baseTemplate(
       "Visit Summary Available",
       `<p>Hi ${patientName},</p>
        <p>Your visit summary from Dr. ${doctorName} is now available.</p>
-       <p>Log in to view your summary, medications, and follow-up instructions.</p>`
+       <p>Log in to view your summary, medications, and follow-up instructions.</p>`,
     ),
   }),
 };

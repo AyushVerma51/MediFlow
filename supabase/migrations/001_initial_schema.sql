@@ -1,5 +1,5 @@
 -- ==============================================
--- HealthConnect Medical — Initial Schema
+-- MediFlow — Initial Schema
 -- ==============================================
 
 -- Enable required extensions
